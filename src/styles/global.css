@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .link {
+    @apply cursor-pointer;
+  }
+
+  .link:hover {
+    @apply text-blue-500;
+  }
+}
+
