@@ -12,6 +12,7 @@ export const userSlice = createSlice({
       state.loading = false;
       state.data = {} as UserData;
       state.error = '';
+      window.location.href = '/';
     },
   },
   extraReducers: (builder) => {

@@ -11,7 +11,8 @@ export const loginAsyncBuilder = (builder: ActionReducerMapBuilder<UserState>) =
     .addCase(loginAsync.fulfilled, (state, { payload }) => {
       localStorage.setItem('token', payload.token);
       state.loading = false;
-      state.data = payload;
+      state.data = payload.user;
+      state.token = payload.token;
     })
     .addCase(loginAsync.rejected, (state, { payload }) => {
       state.loading = false;

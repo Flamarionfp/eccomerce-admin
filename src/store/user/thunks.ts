@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { login } from 'services/user';
-import { AuthData } from 'types';
+import { AuthRequest } from 'types';
 export const loginAsync = createAsyncThunk(
   'user/login',
-  async (data: AuthData, { rejectWithValue }) => {
+  async (data: AuthRequest, { rejectWithValue }) => {
     try {
       const response = await login(data);
 

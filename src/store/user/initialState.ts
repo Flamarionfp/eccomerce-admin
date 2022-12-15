@@ -4,7 +4,8 @@ import { UserState } from './user.types';
 const token = localStorage.getItem('token');
 
 export const initialState: UserState = {
-  data: { token } as UserData,
+  data: {} as UserData,
+  token,
   loading: false,
   error: '',
   success: false,
