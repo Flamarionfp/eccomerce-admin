@@ -1,6 +1,6 @@
 export default function (plop) {
   plop.setGenerator('component', {
-    description: 'application component logic',
+    description: 'Create a new component',
     prompts: [
       {
         type: 'input',
@@ -17,7 +17,7 @@ export default function (plop) {
       {
         type: 'add',
         path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-        templateFile: 'templates/stories.tsx.hbs',
+        templateFile: 'templates/component-stories.tsx.hbs',
       },
       {
         type: 'add',
@@ -28,6 +28,29 @@ export default function (plop) {
         type: 'add',
         path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.types.ts',
         templateFile: 'templates/types.ts.hbs',
+      },
+    ],
+  });
+
+  plop.setGenerator('page', {
+    description: 'Create a new page',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Nome da Página',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: '../src/pages/{{pascalCase name}}/{{pascalCase name}}.tsx',
+        templateFile: 'templates/component.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: '../src/pages/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+        templateFile: 'templates/page-stories.tsx.hbs',
       },
     ],
   });
